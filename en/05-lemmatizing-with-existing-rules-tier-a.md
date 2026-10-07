@@ -6,3 +6,5 @@ Where curated grammar exists, the system combines exact rules with a statistical
 2.  **Lexicon check.** Candidates whose lemma is in the lexicon are preferred; unknown lemmas are allowed but penalised.
 3.  **Unknown words.** A guesser strips the most productive affixes (productivity = number of distinct stems observed with the affix) and proposes candidate lemmas ranked by paradigm fit.
 4.  **Contextual choice.** A neural edit-script lemmatizer (the approach of the Universal Lemmatizer and Stanza/UDPipe, trained on Universal Dependencies) scores every candidate in its sentence. The output is constrained to the rule candidates whenever at least one exists, so the model cannot invent non-words.
+
+Language-specific requirements for these steps (which alternations, exceptions and context rules are needed) are collected in [`languages/`](../languages/); for example, [Hungarian](../languages/hung1274-hungarian/en.md).

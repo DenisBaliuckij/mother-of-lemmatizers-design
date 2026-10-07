@@ -78,6 +78,9 @@ def test_digest_window_rejects_naive_datetime():
         ("original/Mother_of_Lemmatizers_draft1_en.pdf", wd.OTHER_GROUP),
         ("README.md", wd.OTHER_GROUP),
         (".github/workflows/weekly-digest.yml", wd.OTHER_GROUP),
+        ("languages/hung1274-hungarian/ru.md", "languages/hung1274-hungarian"),
+        ("languages/hung1274-hungarian/test-cases.tsv", "languages/hung1274-hungarian"),
+        ("languages/README.md", wd.OTHER_GROUP),
     ],
 )
 def test_group_key(path, expected):

@@ -1,0 +1,55 @@
+# Proposed computational subsections for Hungarian_Morphological_Profile in the
+# language-resource ontology. Digest of "Требования к лемматизатору", section
+# "Рекомендации по доработке онтологии". Status: proposal under review.
+# IDs (HU-NN) refer to the requirements in ru.md / en.md.
+
+language:
+  name: Hungarian
+  glottocode: hung1274
+  iso639_3: hun
+
+exception_tables:
+  # HU-22: forms that successive suffix stripping cannot recover.
+  suppletive_verbs:
+    - lemma: megy
+      past: ment
+  # HU-23: irregular pronoun case forms; the source names the dative forms.
+  irregular_pronouns:
+    - lemma: én
+      forms: {dative: nekem}
+    - lemma: te
+      forms: {dative: neked}
+    - lemma: ő
+      forms: {dative: neki}
+  # HU-05: stems whose final a/e lengthens to á/é before certain suffixes.
+  vowel_lengthening_stems:
+    - {lemma: alma, example: almát}
+    - {lemma: mese, example: mesét}
+
+verbal_prefixes:
+  # HU-16, HU-17 (igekötők). The source listed "fel" twice; deduplicated.
+  list: [meg, el, fel, ki, be, át, le, össze, szét]
+  rule: >-
+    Strip or normalize verbal prefixes to the base verb lemma regardless of
+    syntactic separation (e.g. "nem írta meg" -> lemma "megír").
+
+special_morphemes:
+  # HU-15: portmanteau 1SG subject -> 2SG object.
+  "-lak/-lek":
+    subject: 1SG
+    object: 2SG
+    conjugation_type: definite_special
+    example: {form: látlak, lemma: lát}
+  # HU-18
+  infinitive_marker: "-ni"
+
+assimilation_rules:
+  # HU-06; with HU-25 the doubling applies to the first letter of a digraph.
+  - suffix: "-val/-vel"
+    rule: >-
+      If the stem ends in a consonant, the "v" of the suffix assimilates and
+      doubles the final consonant of the stem. The lemmatizer must reverse this
+      to recover -val/-vel.
+    examples:
+      - {stem: kéz, form: kézzel}
+      - {stem: rész, form: résszel}  # digraph sz: only "s" doubles
