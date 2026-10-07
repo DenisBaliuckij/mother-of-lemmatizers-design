@@ -1,0 +1,27 @@
+id	form	context	lemma	features	requirements	note
+hu-001	házainkban		ház	Case=Ine|Number[psor]=Plur|Person[psor]=1	HU-01,HU-09,HU-11	ház + ai + nk + ban; plurality of the possessed (-ai-) not tagged here: check the UD Hungarian convention
+hu-002	házakban		ház	Case=Ine|Number=Plur	HU-11
+hu-003	házam		ház	Number[psor]=Sing|Person[psor]=1	HU-09
+hu-004	házad		ház	Number[psor]=Sing|Person[psor]=2	HU-09
+hu-005	háza		ház	Number[psor]=Sing|Person[psor]=3	HU-09
+hu-006	házaink		ház	Number[psor]=Plur|Person[psor]=1	HU-09	plurality of the possessed (-ai-): see hu-001
+hu-007	házhoz		ház	Case=All	HU-02,HU-04	back vowel: -hoz
+hu-008	kézhez		kéz	Case=All	HU-02,HU-04	front unrounded: -hez
+hu-009	könyvhöz		könyv	Case=All	HU-04	front rounded: -höz
+hu-010	almát		alma	Case=Acc	HU-05	final a lengthens
+hu-011	mesét		mese	Case=Acc	HU-05	final e lengthens
+hu-012	pianót		pianó	Case=Acc	HU-05
+hu-013	kézzel		kéz	Case=Ins	HU-06	-vel assimilated
+hu-014	résszel		rész	Case=Ins	HU-06,HU-25	digraph sz: only s doubles
+hu-015	alma	két alma	alma	Number=Sing	HU-12	singular after a numeral
+hu-016	olvasok		olvas	Definite=Ind|Number=Sing|Person=1	HU-13	indefinite conjugation
+hu-017	olvasom		olvas	Definite=Def|Number=Sing|Person=1	HU-13	definite conjugation
+hu-018	látlak		lát	Definite=2|Number=Sing|Person=1	HU-15	1SG subject, 2SG object; UD Hungarian marks this Definite=2
+hu-019	megírta		megír		HU-16,HU-17
+hu-020	írta	írta meg	megír		HU-17	separated prefix; lemma spans two tokens
+hu-021	írta	nem írta meg	megír		HU-17	separated prefix after negation
+hu-022	olvasni		olvas	VerbForm=Inf	HU-18
+hu-023	nekem		én	Case=Dat|Number=Sing|Person=1	HU-23
+hu-024	neked		te	Case=Dat|Number=Sing|Person=2	HU-23
+hu-025	neki		ő	Case=Dat|Number=Sing|Person=3	HU-23
+hu-026	ment		megy	Tense=Past	HU-22	suppletive past

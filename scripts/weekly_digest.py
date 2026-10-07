@@ -37,6 +37,8 @@ ERROR_EXCERPT_CHARS = 300
 
 # A section of the design document: en/03-language-recognition.md -> "en/03-language-recognition".
 _GROUP_RE = re.compile(r"^(en|ru)/([^/]+)\.md$")
+# Requirements for one language: languages/hung1274-hungarian/ru.md -> "languages/hung1274-hungarian".
+_LANGUAGE_RE = re.compile(r"^languages/([^/]+)/")
 # Loose rule: enough to build a safe https://github.com/<login> link.
 _LOGIN_RE = re.compile(r"^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$")
 # Strict rule for DIGEST_NOTIFY (real @mentions): GitHub forbids leading,
@@ -77,9 +79,13 @@ def digest_window(now: datetime) -> tuple[datetime, datetime]:
 
 
 def group_key(path: str) -> str:
-    """Map a changed file path to '<doc language>/<section>', else OTHER_GROUP."""
+    """Map a changed file path to '<doc language>/<section>' or 'languages/<language>',
+    else OTHER_GROUP."""
     match = _GROUP_RE.match(path)
-    return f"{match[1]}/{match[2]}" if match else OTHER_GROUP
+    if match:
+        return f"{match[1]}/{match[2]}"
+    match = _LANGUAGE_RE.match(path)
+    return f"languages/{match[1]}" if match else OTHER_GROUP
 
 
 def approvers_from_reviews(reviews: list[dict[str, Any]]) -> tuple[str, ...]:
