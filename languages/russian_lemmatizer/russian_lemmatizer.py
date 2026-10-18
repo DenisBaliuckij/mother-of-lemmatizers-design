@@ -539,11 +539,11 @@ class RussianLemmatizer:
             logger.addHandler(handler)
             logger.setLevel(logging.WARNING)
 
-        rules = Path(rules_dir)
-        if not rules.is_dir() or not any(rules.glob("*.lp")):
-            raise FileNotFoundError(
-                f"rules directory {rules} has no .lp files; generation rules are required on disk"
-            )
+        # rules = Path(rules_dir)
+        # if not rules.is_dir() or not any(rules.glob("*.lp")):
+        #     raise FileNotFoundError(
+        #         f"rules directory {rules} has no .lp files; generation rules are required on disk"
+        #     )
 
         onto_file = Path(ontology_path)
         try:
