@@ -6,7 +6,7 @@ from russian_lemmatizer import RussianLemmatizer
 lem = RussianLemmatizer(
     ontology_path="OntoRussian.json",
     dev_path="russian-development.yaml",
-    rules_dir="rules/ru"
+    # rules_dir="rules/ru"
 )
 
 # Запускаем оценку на holdout
