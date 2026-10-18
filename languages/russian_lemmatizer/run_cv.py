@@ -59,7 +59,7 @@ def main() -> None:
         lemmatizer = RussianLemmatizer(
             str(ROOT / "OntoRussian.json"),
             str(train_path),
-            str(ROOT / "rules" / "ru"), #ru-lemmatizer
+            # str(ROOT / "rules" / "ru"), #ru-lemmatizer
         )
         correct = 0
         total = 0
