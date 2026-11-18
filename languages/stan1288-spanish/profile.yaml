@@ -1,0 +1,56 @@
+# Proposed computational subsections for Spanish_Morphological_Profile in the
+# language-resource ontology. Companion to the Hungarian worked example; same
+# shape, Spanish content. Status: proposal under review.
+# IDs (ES-NN) refer to the requirements in ru.md / en.md.
+
+language:
+  name: Spanish
+  glottocode: stan1288
+  iso639_3: spa
+
+orthography:
+  # ES-01, ES-02: written accents and ñ are distinctive; do not strip them.
+  minimal_pairs:
+    - {a: "papá", b: papa, gloss_a: dad, gloss_b: potato}
+    - {a: "sí", b: si, gloss_a: yes, gloss_b: if}
+    - {a: "año", b: ano, gloss_a: year, gloss_b: anus}
+
+stem_spelling_changes:
+  # ES-04: orthographic changes that preserve the consonant's sound before an ending.
+  rules:
+    - {pattern: "c -> qu / _ e,é", example: {lemma: buscar, form: "busqué"}}
+    - {pattern: "g -> gu / _ e,é", example: {lemma: pagar, form: "pagué"}}
+    - {pattern: "z -> c / _ e,é",  example: {lemma: cruzar, form: "crucé"}}
+    - {pattern: "gu -> gü / _ e",  example: {lemma: averiguar, form: "averigüé"}}
+
+stem_vowel_changes:
+  # ES-05: diphthongization / raising in stressed stems; recover the infinitive.
+  rules:
+    - {change: "e -> ie", example: {lemma: pensar, form: pienso}}
+    - {change: "o -> ue", example: {lemma: poder,  form: puedo}}
+    - {change: "e -> i",  example: {lemma: pedir,  form: pido}}
+
+enclitic_pronouns:
+  # ES-14, ES-15: object clitics attach to imperative, infinitive and gerund; they
+  # stack, and enclisis can add or shift the written accent.
+  clitics: [me, te, se, lo, la, le, nos, os, los, las, les]
+  rule: >-
+    Split the clitic chain off the verb and restore the verb's own accentuation.
+    Example: "dámelo" = da (imperative of dar) + me + lo; the accent on "dá-" is
+    added by enclisis and is not part of the lemma.
+  examples:
+    - {form: "dámelo",     verb_lemma: dar,     clitics: [me, lo]}
+    - {form: "cómpramela", verb_lemma: comprar, clitics: [me, la]}
+
+mente_adverbs:
+  # ES-10: productive adverbs = feminine adjective + -mente.
+  rule: "rápida + -mente -> rápidamente; the base adjective is rápido."
+  example: {form: "rápidamente", base_adjective: "rápido"}
+
+exception_tables:
+  # ES-13: highly irregular / suppletive verbs whose forms share no stem with the lemma.
+  suppletive_verbs:
+    - {lemma: ir,  forms: {pres_1sg: voy, past_3sg: fue}}
+    - {lemma: ser, forms: {pres_1sg: soy, past_3sg: fue}}  # fue is shared ir/ser
+    - {lemma: haber, forms: {pres_3sg: hay}}
+  note: "fue is ambiguous between ir and ser; the context module must disambiguate (ES-20)."

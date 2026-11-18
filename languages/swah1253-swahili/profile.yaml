@@ -1,0 +1,61 @@
+# Proposed computational subsections for Swahili_Morphological_Profile in the
+# language-resource ontology. Companion to the Hungarian worked example; same
+# shape, Swahili content. Status: proposal under review.
+# IDs (SW-NN) refer to the requirements in ru.md / en.md.
+
+language:
+  name: Swahili
+  glottocode: swah1253
+  iso639_3: swh
+
+orthography:
+  # SW-01, SW-02: digraphs and the apostrophe letter ng'.
+  digraphs: [ch, dh, gh, "ng'", ny, sh, th]
+  note: >-
+    ng' (velar nasal, with apostrophe) is distinct from ng. Prenasalized mb, nd,
+    ng, nj and the syllabic nasal prefix m-/n- must be told apart during
+    segmentation (SW-02).
+
+noun_classes:
+  # SW-03, SW-04, SW-07: class prefixes mark number in singular/plural pairs.
+  # The lemma convention is the singular-class citation form (mtoto, kitabu).
+  pairs:
+    - {sg_class: 1,  pl_class: 2,  sg_prefix: "m-/mw-", pl_prefix: "wa-",  example: {sg: mtoto, pl: watoto}}
+    - {sg_class: 3,  pl_class: 4,  sg_prefix: "m-/mw-", pl_prefix: "mi-",  example: {sg: mti, pl: miti}}
+    - {sg_class: 5,  pl_class: 6,  sg_prefix: "ji-/0",  pl_prefix: "ma-",  example: {sg: jicho, pl: macho}}
+    - {sg_class: 7,  pl_class: 8,  sg_prefix: "ki-/ch-",pl_prefix: "vi-/vy-", example: {sg: kitabu, pl: vitabu}}
+    - {sg_class: 9,  pl_class: 10, sg_prefix: "N-/0",   pl_prefix: "N-/0",  example: {sg: nyumba, pl: nyumba}}
+    - {sg_class: 11, pl_class: 10, sg_prefix: "u-",     pl_prefix: "N-/0",  example: {sg: ufunguo, pl: funguo}}
+  locative:
+    # SW-06: locative classes 16/17/18 derived with the suffix -ni.
+    suffix: "-ni"
+    example: {base: nyumba, form: nyumbani}
+
+verb_template:
+  # SW-10..SW-16: the Bantu verb is a slot template. Strip slots to the stem.
+  slots: [negation, subject, tense_aspect, object, root, extension, final_vowel]
+  example: {form: ninasoma, segmentation: "ni + na + soma", gloss: "I-PRES-read"}
+  subject_concord: {"1sg": ni, "2sg": u, "3sg_cl1": a, "1pl": tu, "2pl": m, "3pl_cl2": wa}
+  tense_aspect: {present: "-na-", past: "-li-", future: "-ta-", perfect: "-me-",
+                 sequential: "-ka-", situative: "-ki-"}
+  final_vowel: {indicative: "-a", subjunctive: "-e"}
+  extensions: {applicative: "-i-/-e-", passive: "-w-", causative: "-sh-/-z-", stative: "-k-"}
+
+negation:
+  # SW-15: negation combines the prefix ha- (+ subject) and a final -i in the present.
+  rule: >-
+    ha- + subject concord, and the final vowel becomes -i in the negative present
+    (ha-wa-som-i = "they do not read"). Recover the positive stem and mark
+    Polarity=Neg; other tenses use distinct negative markers (-ku- past, -ta- ...).
+  example: {form: hawasomi, lemma: soma}
+
+exception_tables:
+  # SW-19: borrowed nouns with no overt class prefix (usually class 9/10 or 5/6).
+  borrowings:
+    - {form: redio, class: 9}
+    - {form: daktari, class: "5/9"}
+  # SW-20: monosyllabic verb roots that keep the infinitive ku- in some tenses.
+  monosyllabic_verbs:
+    - {lemma: ja, infinitive: kuja, example: anakuja}
+    - {lemma: la, infinitive: kula}
+    - {lemma: nywa, infinitive: kunywa}

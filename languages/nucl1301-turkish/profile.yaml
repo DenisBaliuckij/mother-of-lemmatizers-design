@@ -1,0 +1,73 @@
+# Proposed computational subsections for Turkish_Morphological_Profile in the
+# language-resource ontology. Companion to the Hungarian worked example; same
+# shape, Turkish content. Status: proposal under review.
+# IDs (TR-NN) refer to the requirements in ru.md / en.md.
+
+language:
+  name: Turkish
+  glottocode: nucl1301
+  iso639_3: tur
+
+case_folding:
+  # TR-01, TR-02: Turkish-specific case folding. Naive lowercasing destroys stems.
+  rules:
+    - {upper: "İ", lower: "i"}
+    - {upper: "I", lower: "ı"}
+  note: >-
+    Dotted/dotless i (i/ı) and the pairs o/ö, u/ü, g/ğ, s/ş, c/ç are distinct
+    letters, not diacritic variants. Case folding must be locale-aware ("tr").
+
+vowel_harmony:
+  # TR-03, TR-04: two harmony systems. Suffix vowels are abstract archiphonemes.
+  twofold_A:
+    # backness only: low vowel realized a/e.
+    archiphoneme: A
+    realizations: {back: a, front: e}
+    example: {marker: locative, forms: ["-da", "-de", "-ta", "-te"]}
+  fourfold_I:
+    # backness + rounding: high vowel realized ı/i/u/ü.
+    archiphoneme: I
+    realizations: {back_unrounded: "ı", front_unrounded: i, back_rounded: u, front_rounded: "ü"}
+    example: {marker: accusative, forms: ["-ı", "-i", "-u", "-ü"]}
+
+consonant_rules:
+  # TR-05: final-stop softening (lenition) before a vowel-initial suffix.
+  softening:
+    - {final: p, voiced: b, example: {lemma: kitap, form: kitabı}}
+    - {final: "ç", voiced: c, example: {lemma: "ağaç", form: "ağacı"}}
+    - {final: t, voiced: d, example: {lemma: kanat, form: kanadı}}
+    - {final: k, voiced: "ğ", example: {lemma: "köpek", form: "köpeği"}}
+  # TR-06: suffix-initial consonant assimilates in voicing after a voiceless stem.
+  voicing_assimilation:
+    - {marker: locative, after_voiceless: "-ta/-te", after_voiced: "-da/-de",
+       example: {form: kitapta}}
+  # TR-07: buffer consonants inserted to avoid vowel hiatus.
+  buffer_consonants:
+    - {buffer: y, context: "between a vowel-final stem and a vowel-initial suffix",
+       example: {lemma: "kapı", form: "kapıyı"}}
+    - {buffer: n, context: "pronominal n after 3rd-person possessive, before case",
+       example: {form: evinde}}
+
+suffix_order:
+  # TR-09, TR-10: fixed slot order for nominals.
+  nominal: [stem, plural, possessive, case]
+  example: {form: evlerimizden, segmentation: "ev + ler + imiz + den"}
+  # TR-16: fixed slot order for verbs.
+  verbal: [stem, voice, negation, tense_aspect, person]
+  example: {form: geliyordum, segmentation: "gel + iyor + du + m"}
+
+negation:
+  # TR-17: negation infix -mA- before the tense marker.
+  marker: {archiphoneme: "-mA-", forms: ["-ma", "-me"]}
+  rule: "Recover the positive stem and mark Polarity=Neg."
+  example: {form: gelmiyor, lemma: gel}
+
+exception_tables:
+  # TR-15: irregular pronoun stems.
+  irregular_pronouns:
+    - {lemma: ben, forms: {dative: bana}}
+    - {lemma: bu, forms: {accusative: bunu}}
+  # TR-23: stems with vowel drop or irregular buffering.
+  vowel_drop_stems:
+    - {lemma: "ağız", bound_stem: "ağz-", example: "ağzı"}
+    - {lemma: su, bound_stem: "suy-", example: suyu}

@@ -7,6 +7,10 @@
 | Язык | Glottocode | Уровень | Требования | Статус |
 |---|---|---|---|---|
 | Венгерский | `hung1274` | A | [ru](hung1274-hungarian/ru.md) · [en](hung1274-hungarian/en.md) · [профиль](hung1274-hungarian/profile.yaml) · [примеры](hung1274-hungarian/test-cases.tsv) | на рецензии |
+| Финский | `finn1318` | A | [ru](finn1318-finnish/ru.md) · [en](finn1318-finnish/en.md) · [профиль](finn1318-finnish/profile.yaml) · [примеры](finn1318-finnish/test-cases.tsv) | черновик |
+| Турецкий | `nucl1301` | A | [ru](nucl1301-turkish/ru.md) · [en](nucl1301-turkish/en.md) · [профиль](nucl1301-turkish/profile.yaml) · [примеры](nucl1301-turkish/test-cases.tsv) | черновик |
+| Испанский | `stan1288` | A | [ru](stan1288-spanish/ru.md) · [en](stan1288-spanish/en.md) · [профиль](stan1288-spanish/profile.yaml) · [примеры](stan1288-spanish/test-cases.tsv) | черновик |
+| Суахили | `swah1253` | A | [ru](swah1253-swahili/ru.md) · [en](swah1253-swahili/en.md) · [профиль](swah1253-swahili/profile.yaml) · [примеры](swah1253-swahili/test-cases.tsv) | черновик |
 
 ## Устройство папки языка
 

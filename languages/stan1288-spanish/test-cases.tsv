@@ -1,0 +1,23 @@
+id	form	context	lemma	features	requirements	note
+es-001	niños		niño	Gender=Masc|Number=Plur	ES-06	masculine plural; -os fuses gender+number
+es-002	niñas		niña	Gender=Fem|Number=Plur	ES-06,ES-07	feminine lexeme niña
+es-003	luces		luz	Gender=Fem|Number=Plur	ES-08	z->ces
+es-004	naciones		nación	Gender=Fem|Number=Plur	ES-03,ES-08	accent drops in the plural
+es-005	rojas		rojo	Gender=Fem|Number=Plur	ES-09	adjective lemma = masculine singular
+es-006	rápidamente		rápidamente		ES-10	base adjective rápido; UD keeps the adverb as its own lemma
+es-007	hablábamos		hablar	Mood=Ind|Number=Plur|Person=1|Tense=Imp|VerbForm=Fin	ES-11	imperfect
+es-008	busqué		buscar	Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin	ES-04	c->qu
+es-009	pagué		pagar	Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin	ES-04	g->gu
+es-010	pienso		pensar	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	ES-05	e->ie
+es-011	puedo		poder	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	ES-05	o->ue
+es-012	pido		pedir	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	ES-05	e->i
+es-013	hable	que yo hable	hablar	Mood=Sub|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	ES-12	present subjunctive; vs preterite hablé
+es-014	hablé		hablar	Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin	ES-12	preterite; accent distinguishes it from subjunctive hable
+es-015	fue	fue a casa	ir	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	ES-13	suppletive; ambiguous ir/ser, context -> ir
+es-016	voy		ir	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	ES-13	suppletive
+es-017	dámelo		dar	Mood=Imp|Number=Sing|Person=2|VerbForm=Fin	ES-14,ES-15	da+me+lo; accent added by enclisis; clitics me,lo not emitted here
+es-018	comiendo		comer	VerbForm=Ger	ES-16	gerund
+es-019	comido		comer	Gender=Masc|Number=Sing|VerbForm=Part	ES-16	past participle
+es-020	cómpramela		comprar	Mood=Imp|Number=Sing|Person=2|VerbForm=Fin	ES-14,ES-15	compra+me+la; two clitics; accent shifted
+es-021	se	se lava	se	Person=3|PronType=Prs	ES-19	reflexive / impersonal clitic
+es-022	casita		casa	Gender=Fem|Number=Sing	ES-18	diminutive -ita; lemma policy — check UD convention
