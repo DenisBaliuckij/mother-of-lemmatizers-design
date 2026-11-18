@@ -1,0 +1,6 @@
+# Development and CI dependencies.
+# The design document and scripts/weekly_digest.py are standard-library only;
+# scripts/validate_languages.py uses pyyaml to parse languages/*/profile.yaml,
+# and the test suite runs under pytest.
+pyyaml
+pytest
