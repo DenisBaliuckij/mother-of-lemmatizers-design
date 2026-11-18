@@ -1,0 +1,24 @@
+id	form	context	lemma	features	requirements	note
+tr-001	evde		ev	Case=Loc|Number=Sing	TR-03,TR-08	locative -de (front harmony)
+tr-002	okulda		okul	Case=Loc|Number=Sing	TR-03	back harmony -da
+tr-003	kapıyı		kapı	Case=Acc|Number=Sing	TR-04,TR-07	buffer -y-; back unrounded -ı
+tr-004	kitabı	kitabı okudum	kitap	Case=Acc|Number=Sing	TR-05	final p->b softening
+tr-005	ağacı	ağacı kesti	ağaç	Case=Acc|Number=Sing	TR-05	ç->c softening
+tr-006	evler		ev	Case=Nom|Number=Plur	TR-13	plural -ler (front harmony)
+tr-007	kitaplar		kitap	Case=Nom|Number=Plur	TR-13	back -lar
+tr-008	evlerimizden		ev	Case=Abl|Number=Plur|Number[psor]=Plur|Person[psor]=1	TR-09,TR-10,TR-11	ev+ler+imiz+den
+tr-009	evim		ev	Case=Nom|Number=Sing|Number[psor]=Sing|Person[psor]=1	TR-11	1sg possessive
+tr-010	kitapta		kitap	Case=Loc|Number=Sing	TR-06	voiceless stem -> -ta
+tr-011	evinde		ev	Case=Loc|Number=Sing|Number[psor]=Sing|Person[psor]=3	TR-07	buffer -n- before case
+tr-012	bana		ben	Case=Dat|Number=Sing|Person=1|PronType=Prs	TR-15	irregular ben->ban-
+tr-013	bunu		bu	Case=Acc|Number=Sing|PronType=Dem	TR-15	bu->bun-, buffer n
+tr-014	geliyor		gel	Aspect=Prog|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	TR-16	lemma = bare stem; dict gelmek
+tr-015	geliyordum		gel	Aspect=Prog|Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin	TR-16	gel+iyor+du+m
+tr-016	gelmiyor		gel	Aspect=Prog|Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	TR-17	negation -mi-
+tr-017	yazar	her gün yazar	yaz	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	TR-18	aorist -ar; also the noun "writer"
+tr-018	gelince		gel	VerbForm=Conv	TR-19	converb -ince
+tr-019	ağzı		ağız		TR-23	vowel drop ağız->ağz-; -ı is accusative or 3sg possessive
+tr-020	işçi		işçi	Case=Nom|Number=Sing	TR-22	derived iş+çi but lexicalized; lemma is işçi, not iş
+tr-021	ev	üç ev	ev	Number=Sing	TR-14	singular after a numeral
+tr-022	evi	evi aldım	ev	Case=Acc|Number=Sing	TR-24	definite object marked accusative
+tr-023	okulu	okulu bitirdi	okul	Case=Acc|Number=Sing	TR-04	back rounded -u (four-way harmony)

@@ -1,0 +1,25 @@
+id	form	context	lemma	features	requirements	note
+fi-001	talossa		talo	Case=Ine|Number=Sing	FI-03,FI-09	inessive singular
+fi-002	taloissa		talo	Case=Ine|Number=Plur	FI-08,FI-12	inessive plural; talo+i+ssa
+fi-003	metsässä		metsä	Case=Ine|Number=Sing	FI-03	front harmony -ssä
+fi-004	kukan		kukka	Case=Gen|Number=Sing	FI-04	gradation kk->k
+fi-005	kadun		katu	Case=Gen|Number=Sing	FI-04	gradation t->d
+fi-006	talossani		talo	Case=Ine|Number=Sing|Number[psor]=Sing|Person[psor]=1	FI-03,FI-10	inessive + 1sg possessive
+fi-007	taloissamme		talo	Case=Ine|Number=Plur|Number[psor]=Plur|Person[psor]=1	FI-08,FI-10,FI-12	talo+i+ssa+mme
+fi-008	taloa		talo	Case=Par|Number=Sing	FI-13	partitive -a
+fi-009	vettä		vesi	Case=Par|Number=Sing	FI-06,FI-13	e-stem vet-; partitive -tä
+fi-010	vedessä		vesi	Case=Ine|Number=Sing	FI-04,FI-06	e-stem vede-; gradation t->d
+fi-011	taloon		talo	Case=Ill|Number=Sing	FI-09	illative
+fi-012	talot		talo	Case=Nom|Number=Plur	FI-12	nominative plural -t
+fi-013	puhun		puhua	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin|Voice=Act	FI-15	lemma = A-infinitive
+fi-014	menen		mennä	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin|Voice=Act	FI-15	consonant stem men-
+fi-015	menetkö		mennä	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act	FI-15,FI-19	question clitic -kö stripped
+fi-016	en	en mene	ei	Number=Sing|Person=1	FI-16	negative auxiliary; UD lemma ei; connegative verb follows
+fi-017	taloissakin		talo	Case=Ine|Number=Plur	FI-12,FI-19	clitic -kin
+fi-018	puhutaan		puhua	Mood=Ind|Tense=Pres|VerbForm=Fin|Voice=Pass	FI-18	impersonal / passive
+fi-019	minua		minä	Case=Par|Number=Sing|Person=1|PronType=Prs	FI-14	pronoun stem minu-
+fi-020	minulle		minä	Case=All|Number=Sing|Person=1|PronType=Prs	FI-14	allative
+fi-021	parempi		hyvä	Case=Nom|Degree=Cmp|Number=Sing	FI-23	suppletive comparative; lemma hyvä vs parempi — check UD convention
+fi-022	kirjaa	luen kirjaa	kirja	Case=Par|Number=Sing	FI-13,FI-24	partitive object, ongoing aspect
+fi-023	kirjan	luen kirjan	kirja	Case=Gen|Number=Sing	FI-24	total object (genitive-accusative)
+fi-024	kirjakauppa		kirjakauppa	Case=Nom|Number=Sing	FI-22	compound; lemma kept whole, not kauppa

@@ -1,0 +1,67 @@
+# Proposed computational subsections for Finnish_Morphological_Profile in the
+# language-resource ontology. Companion to the Hungarian worked example; same
+# shape, Finnish content. Status: proposal under review.
+# IDs (FI-NN) refer to the requirements in ru.md / en.md.
+
+language:
+  name: Finnish
+  glottocode: finn1318
+  iso639_3: fin
+
+vowel_harmony:
+  # FI-03: back vs front harmony; e, i are neutral (transparent).
+  back_vowels: [a, o, u]
+  front_vowels: ["ä", "ö", "y"]
+  neutral_vowels: [e, i]
+  # The lemmatizer recovers one underlying morph behind each allomorph pair.
+  suffix_allomorphs:
+    - {marker: inessive, forms: ["-ssa", "-ssä"]}
+    - {marker: adessive, forms: ["-lla", "-llä"]}
+    - {marker: question_clitic, forms: ["-ko", "-kö"]}
+
+gradation_rules:
+  # FI-04, FI-05: consonant gradation (astevaihtelu). Reverse surface grade to
+  # recover the stem. Grade depends on whether the syllable is open or closed.
+  alternations:
+    - {strong: kk, weak: k, example: {lemma: kukka, form: kukan}}
+    - {strong: pp, weak: p, example: {lemma: kaappi, form: kaapin}}
+    - {strong: tt, weak: t, example: {lemma: katto, form: katon}}
+    - {strong: t,  weak: d, example: {lemma: katu,  form: kadun}}
+    - {strong: k,  weak: "",  example: {lemma: jalka, form: jalan}}
+    - {strong: p,  weak: v, example: {lemma: leipä, form: leivän}}
+    - {strong: nt, weak: nn, example: {lemma: ranta, form: rannan}}
+  note: >-
+    Quantitative (kk~k) and qualitative (t~d, p~v, k~zero) gradation both occur;
+    the grade is weak before a closed syllable. The reverse rule must know the
+    paradigm slot, so it belongs with the rule-based analyzer, not a lexical list.
+
+stem_classes:
+  # FI-06: stem-vowel alternations the chain cannot simply cut off.
+  e_stems:
+    - {lemma: vesi, oblique_stem: "vede-/vete-", example: vedessä}
+  plural_i:
+    # The oblique plural -i-/-j- changes the stem vowel.
+    - {lemma: talo, example: taloissa}
+
+clitic_particles:
+  # FI-19, FI-20: enclitics stack AFTER inflection; strip them before lemmatizing.
+  list: ["-kin", "-kaan", "-kään", "-ko", "-kö", "-han", "-hän", "-pa", "-pä", "-s"]
+  rule: >-
+    Several clitics can attach in sequence (e.g. tulisi-ko-han). Stripping a clitic
+    does not change the lemma but may add a feature (e.g. question for -ko/-kö).
+
+negation:
+  # FI-16: negation is an inflected auxiliary plus a connegative main verb.
+  auxiliary: {lemma: ei, note: "inflects for person/number: en, et, ei, emme, ette, eivät"}
+  rule: >-
+    The main verb appears in the connegative form (e.g. "en mene"); it is not a
+    full finite form. Recover the main-verb lemma and mark Polarity=Neg.
+
+exception_tables:
+  # FI-14: personal-pronoun oblique stems that successive stripping cannot recover.
+  irregular_pronouns:
+    - {lemma: "minä", forms: {partitive: minua, allative: minulle}}
+    - {lemma: "sinä", forms: {partitive: sinua, allative: sinulle}}
+  # FI-23: suppletive comparatives and irregular stems.
+  suppletive_stems:
+    - {lemma: "hyvä", comparative: parempi}

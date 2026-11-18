@@ -1,0 +1,22 @@
+id	form	context	lemma	features	requirements	note
+sw-001	watoto		mtoto	Number=Plur	SW-03,SW-04	class 2, plural of class 1 mtoto
+sw-002	mtoto		mtoto	Number=Sing	SW-03	class 1
+sw-003	vitabu		kitabu	Number=Plur	SW-03	class 8, singular kitabu (class 7)
+sw-004	kitabu		kitabu	Number=Sing	SW-03	class 7
+sw-005	nyumbani		nyumba		SW-06	locative -ni (classes 16-18); nyumba is class 9
+sw-006	wazuri	watoto wazuri	-zuri	Number=Plur	SW-08,SW-09	adjective concord class 2; bound stem -zuri
+sw-007	ninasoma		soma	Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	SW-10,SW-11,SW-12	ni-na-soma
+sw-008	anasoma		soma	Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	SW-11	subject a- (class 1)
+sw-009	alisoma		soma	Number=Sing|Person=3|Tense=Past|VerbForm=Fin	SW-12	-li- past
+sw-010	atasoma		soma	Number=Sing|Person=3|Tense=Fut|VerbForm=Fin	SW-12	-ta- future
+sw-011	amesoma		soma	Aspect=Perf|Number=Sing|Person=3|VerbForm=Fin	SW-12	-me- perfect
+sw-012	ninakupenda		penda	Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	SW-13	object marker -ku- (you)
+sw-013	hawasomi		soma	Number=Plur|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	SW-15	ha-wa-som-i negative present
+sw-014	kusoma		soma	VerbForm=Inf	SW-16	infinitive class 15 ku-
+sw-015	anasomwa		soma	Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	SW-14	passive extension -w-
+sw-016	asome		soma	Mood=Sub|Number=Sing|Person=3|VerbForm=Fin	SW-14	subjunctive final -e
+sw-017	anakuja		ja	Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	SW-20	monosyllabic verb keeps ku-: a-na-ku-ja
+sw-018	nyumba		nyumba	Number=Sing	SW-05	class 9, nasal / zero prefix
+sw-019	redio		redio	Number=Sing	SW-19	borrowing, class 9/10, no overt prefix
+sw-020	wanacheza	watoto wanacheza	cheza	Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	SW-08,SW-11	subject concord wa- (class 2) agrees with watoto
+sw-021	ninakisoma	ninakisoma kitabu	soma	Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	SW-13,SW-21	object marker -ki- (class 7)
